@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity"
+    tools:layout_editor_absoluteY="81dp"
+    android:background="#eeeeee">
+
+    <EditText
+        android:id="@+id/user_email_edit_text"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="enter email"
+        android:inputType="textPersonName"
+        android:text="nurhayat123@gmail.com"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/user_password_edit_text"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="password"
+        android:text="nurhayat123"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="signIn"
+        android:text="Sign In"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:textColor="#F5F5F5"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/sign_up_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="signUp"
+        android:text="Sign Up"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:textColor="#F5F5F5"
+        android:textSize="20sp"/>
+
+</android.support.v7.widget.LinearLayoutCompat>
