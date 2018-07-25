@@ -82,53 +82,7 @@ public class ChatActivity extends AppCompatActivity {
     //---------------------database--------------------
             database = FirebaseDatabase.getInstance();
             databaseReference = database.getReference();
-        getData();
-/*
-        // OneSignal Initialization
-        OneSignal.startInit(this)
-                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
-                .unsubscribeWhenNotificationsAreDisabled(true)
-                .init();
-
-
-        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
-            @Override
-            public void idsAvailable(final String userId, String registrationId) {
-                System.out.println("userID: " + userId);
-
-                UUID uuid = UUID.randomUUID();
-                final String uuidString = uuid.toString();
-
-                DatabaseReference newReference = database.getReference("PlayerIDs");
-                newReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        ArrayList<String> playerIDsFromServer = new ArrayList<>();
-
-                        for (DataSnapshot ds: dataSnapshot.getChildren()) {
-
-                            HashMap<String, String> hashMap = (HashMap<String, String>) ds.getValue();
-                            String currentPlayerID = hashMap.get("playerID");
-
-                            playerIDsFromServer.add(currentPlayerID);
-                        }
-
-                        if (!playerIDsFromServer.contains(userId)) {
-                            databaseReference.child("PlayerIDs").child(uuidString).child("playerID").setValue(userId);
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        }); */
-    }
+        getData();     
 
     //----------------------Mesaj Göndere Tıklandıgında-------------
     public void sendMessage(View view){
