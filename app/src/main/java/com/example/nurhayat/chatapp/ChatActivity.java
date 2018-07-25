@@ -37,15 +37,12 @@ public class ChatActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private ArrayList<String> chatMessages = new ArrayList<>();
 
-    //-----------------Menuyu Bağlama-----------------------
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.option_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
-    //--------------Menuye tıklandıgında ne olacak-------------
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.options_menu_sign_out) {
@@ -62,7 +59,6 @@ public class ChatActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //------------------Tanımlamalar-------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,14 +75,14 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recyclerViewAdapter); //recyclerView ile recyclerViewAdapter ı birbirine bağladık
         mAuth = FirebaseAuth.getInstance();
-    //---------------------database--------------------
+   
             database = FirebaseDatabase.getInstance();
             databaseReference = database.getReference();
         getData();     
 
-    //----------------------Mesaj Göndere Tıklandıgında-------------
+   
     public void sendMessage(View view){
-  //----------------firebase e verileri kayddetme----------------
+
          String messageToSend = messageText.getText().toString();
         //databaseReference.child("Chats").child("Chat 1").child("Test Chat").child("Test 2").setValue(messageToSend);
         UUID uuıd = UUID.randomUUID();
@@ -100,8 +96,6 @@ public class ChatActivity extends AppCompatActivity {
         getData();
     }
 
-    //-----------------Mesajları databaseden çekme-------------------------
-    public void getData() {
         DatabaseReference newReference = database.getReference("Chats");
         Query query = newReference.orderByChild("usermessagetime");
         query.addValueEventListener(new ValueEventListener() {
