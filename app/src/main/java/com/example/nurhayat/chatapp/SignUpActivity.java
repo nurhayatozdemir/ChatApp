@@ -47,7 +47,6 @@ public class SignUpActivity extends AppCompatActivity {
                 });
     }
 
-    //----------------Kullanıcı Girişi----------------------
     public void signIn(View view) {
         mAuth.signInWithEmailAndPassword(emailText.getText().toString(),passwordText.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
