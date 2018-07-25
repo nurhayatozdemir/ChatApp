@@ -104,7 +104,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 StorageReference profileImageRef = FirebaseStorage.getInstance().getReference("images/"+uuidImage+".jpg");
                 profileImageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-    //-------------------Profili database e kaydetmek-----------------------
+   
                     @Override
                     public void onSuccess(Uri uri) {
                         String downloadURL = uri.toString();
